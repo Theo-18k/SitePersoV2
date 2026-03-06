@@ -1,0 +1,149 @@
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    zoom: 130%;
+    transition: transform 0.5s ease;
+}
+
+.headerSite {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #141414;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navMenu a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.navMenu a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 5px;
+    width: calc(100% - 30px);
+    height: 3px;
+    background-color: rgb(209, 79, 79);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navMenu a:hover {
+    color: rgb(209, 79, 79);
+}
+
+.navMenu a:hover::after {
+    transform: scaleX(1);
+}
+
+.navMenu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.hero {
+    height: 700px;
+    background:
+        linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+        linear-gradient(135deg, #1a1a1a, #333);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: rgb(209, 79, 79);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+.contenu {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 40px;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.box {
+  animation: float 2s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+
+    .headerSite {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navMenu a {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .contenu {
+        padding: 30px 20px;
+    }
+}
