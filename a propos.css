@@ -12,15 +12,68 @@ body {
 }
 
 .headerSite {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 15px 50px;
     background-color: #141414;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.6);
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.menuToggle {
+    display: none;
+}
+
+.burger {
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 2px solid rgb(209,79,79);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.burger:hover {
+    background-color: rgb(209,79,79);
+    color: #141414;
+}
+
+.menuLinks {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #1a1a1a;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    flex-direction: column;
+    gap: 12px;
+    z-index: 150;
+}
+
+
+.menuToggle:checked + .burger + .menuLinks {
+    display: flex;
+}
+
+.menuLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menuLinks a:hover {
+    background-color: rgb(209,79,79);
+    color: #141414;
 }
 
 .navMenu a {
@@ -159,4 +212,19 @@ body {
     .contenu {
         padding: 30px 20px;
     }
+}
+
+.Footer{
+    margin-top: 50px;
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color:#f25c5c
+}
+ 
+.Footer p{
+    margin: 6px 0;
+    font-size: 17px;
+    letter-spacing: 1px;
 }
